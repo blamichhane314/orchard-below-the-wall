@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "id": "orchard-clearing-3d",
+    "title": "The Orchard Below the Wall",
+    "units": "1 world unit = 1 metre. Ground plane y = 0."
+  },
+  "palette": {
+    "ink": "#26221d",
+    "brick": "#a8432e",
+    "parchment": "#efe6d2",
+    "vellum": "#e2d6bb",
+    "canopyFar": "#2b4438",
+    "canopyMid": "#33553f",
+    "canopyNear": "#223a2e",
+    "trunk": "#5a4a38",
+    "ground": "#4a5c3a",
+    "groundLit": "#5c6f45",
+    "stone": "#8a8578",
+    "stoneLit": "#a49d8c",
+    "gold": "#c8a24a",
+    "lamp": "#e8c877",
+    "sky": "#cfd9c4",
+    "skyHigh": "#a8bda6",
+    "mist": "#dfe6d6"
+  },
+  "player": {
+    "eye": 1.6,
+    "speed": 4.4,
+    "radius": 0.32,
+    "spawn": {
+      "x": -13.4,
+      "z": 2.1,
+      "lookAt": [
+        -9.0,
+        1.0,
+        0.35
+      ]
+    }
+  },
+  "bounds": {
+    "xMin": -70,
+    "xMax": 62,
+    "zMin": -2.2,
+    "zMax": 40
+  },
+  "ravine": {
+    "x0": -9.5,
+    "x1": -1.5,
+    "waterY": -2.15
+  },
+  "bridge": {
+    "z": 0.35,
+    "width": 1.35,
+    "slotLen": 0.55,
+    "startX": -10.45,
+    "slots": 18
+  },
+  "forest": [
+    {
+      "z": -6.5,
+      "s": 1.0,
+      "xs": [
+        -16,
+        -12.5,
+        -2,
+        2.8,
+        7.2,
+        11.5,
+        18.5,
+        24.5,
+        34.5,
+        39,
+        43,
+        46.5,
+        51.5,
+        56,
+        60.5
+      ]
+    },
+    {
+      "z": -12,
+      "s": 1.15,
+      "xs": [
+        -15,
+        -11,
+        0,
+        5,
+        9.5,
+        14.5,
+        20.5,
+        26,
+        31.5,
+        37,
+        42,
+        48,
+        53.5,
+        58.5
+      ]
+    },
+    {
+      "z": -18,
+      "s": 1.3,
+      "xs": [
+        -16.5,
+        -12,
+        -3,
+        3.5,
+        10,
+        16,
+        22,
+        28,
+        34,
+        40,
+        45.5,
+        50.5,
+        55.5,
+        61
+      ]
+    },
+    {
+      "z": 14.5,
+      "s": 1.0,
+      "xs": [
+        12.5,
+        16,
+        19.5,
+        27,
+        36,
+        42,
+        46,
+        52.5,
+        58
+      ]
+    },
+    {
+      "z": 21,
+      "s": 1.2,
+      "xs": [
+        13,
+        15.5,
+        23.5,
+        31,
+        39,
+        44.5,
+        49.5,
+        55.5,
+        61
+      ]
+    },
+    {
+      "z": 27,
+      "s": 1.35,
+      "xs": [
+        -15.5,
+        -8,
+        14,
+        23,
+        32,
+        41,
+        50,
+        59
+      ]
+    },
+    {
+      "z": 33,
+      "s": 1.5,
+      "xs": [
+        16,
+        24,
+        33,
+        42,
+        50.5,
+        58.5
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "bridge-rope",
+      "kind": "station",
+      "at": {
+        "x": -10.35,
+        "z": 0.35
+      },
+      "label": "A rope closes the bridge",
+      "prompt": "Untie the rope",
+      "reach": 7,
+      "architect": {
+        "concept": "region entry; serialized-form threshold",
+        "note": "The 'do something to enter' beat. No mathematics at the rope yet — the gaps carry it."
+      }
+    },
+    {
+      "id": "standing-stone",
+      "kind": "portal",
+      "at": {
+        "x": 5.4,
+        "z": 0
+      },
+      "label": "A standing stone, cut with grooves",
+      "prompt": "Read the stone",
+      "reach": 6,
+      "architect": {
+        "concept": "training-space entry",
+        "note": "Layer 2 portal. Reachable from anywhere in the finished build."
+      }
+    },
+    {
+      "id": "way-stones",
+      "kind": "station",
+      "at": {
+        "x": 9.6,
+        "z": -0.4
+      },
+      "label": "Three low stones, each carved with a rule",
+      "prompt": "Touch a way-stone",
+      "reach": 6,
+      "architect": {
+        "concept": "recognition: bending vs straight (degree)",
+        "note": "Law 3 — every pick draws its rule's honest light-path. The straight ones are seen to be straight."
+      }
+    },
+    {
+      "id": "counting-gate",
+      "kind": "station",
+      "at": {
+        "x": 15.2,
+        "z": 0.35
+      },
+      "label": "A counting gate, its beam weighed with stones",
+      "prompt": "Work the gate",
+      "reach": 8,
+      "architect": {
+        "concept": "solve a linear equation",
+        "note": "The beam tips by the honest difference of its two sides. Level opens the way."
+      }
+    },
+    {
+      "id": "rock",
+      "kind": "takeable",
+      "at": {
+        "x": 17.8,
+        "z": 1.5
+      },
+      "label": "A river stone, palm-sized",
+      "prompt": "Take up the stone",
+      "reach": 5,
+      "architect": {
+        "concept": "instrument trigger",
+        "note": "Opens the toolbox. The world never names what the toolbox is for."
+      }
+    },
+    {
+      "id": "fig-tree",
+      "kind": "scenery",
+      "at": {
+        "x": 21.5,
+        "z": 0
+      },
+      "label": "A fig tree, old and leaning",
+      "architect": {
+        "concept": "encounter site",
+        "note": "Target height is read off the fig, not hard-coded."
+      }
+    },
+    {
+      "id": "fig",
+      "kind": "target",
+      "at": {
+        "x": 22.1,
+        "y": 4.4,
+        "z": 0.62
+      },
+      "radius": 0.34,
+      "label": "One fig, high and out of reach",
+      "architect": {
+        "concept": "goal state",
+        "note": "y = 4.4 is the height the instrument is asked about."
+      }
+    },
+    {
+      "id": "door",
+      "kind": "station",
+      "at": {
+        "x": 31.0,
+        "z": 2.26
+      },
+      "label": "A door in the wall. It asks two numbers.",
+      "prompt": "Try the door",
+      "reach": 7,
+      "architect": {
+        "concept": "gate: quadratic roots",
+        "note": "Law 1 — satisfied by direct solving. No instrument, training, or hint required."
+      }
+    },
+    {
+      "id": "scroll",
+      "kind": "reward",
+      "at": {
+        "x": 31.0,
+        "z": -0.9
+      },
+      "label": "A folded document on a stand",
+      "prompt": "Take the document",
+      "reach": 4,
+      "architect": {
+        "concept": "level reward",
+        "note": "Completion marker; ends the spike's storyline."
+      }
+    },
+    {
+      "id": "cold-well",
+      "kind": "station",
+      "at": {
+        "x": 11.8,
+        "z": 3.8
+      },
+      "label": "A well with a counterweighted hoist",
+      "prompt": "Work the well",
+      "reach": 8,
+      "architect": {
+        "concept": "balance as a one-step equation",
+        "note": "Part module: js/parts/coldwell.js. Wrong counts run away at the error's speed."
+      }
+    },
+    {
+      "id": "drawbridge-yard",
+      "kind": "station",
+      "at": {
+        "x": 47.6,
+        "z": 2.4
+      },
+      "label": "The keeper's foundry, and a bridge stood open",
+      "prompt": "Read the yard",
+      "reach": 8,
+      "architect": {
+        "concept": "factor pair: sum gauge, product balance",
+        "note": "Part module: js/parts/drawbridge.js. Region 2's far gate."
+      }
+    },
+    {
+      "id": "lamp-road",
+      "kind": "station",
+      "at": {
+        "x": 50.8,
+        "z": 0.35
+      },
+      "label": "A lamp at the road's edge, the first of a line",
+      "prompt": "Tend the lamp",
+      "reach": 8,
+      "architect": {
+        "concept": "serialized multiplication; remainder as darkness",
+        "note": "Part module: js/parts/lamproad.js. Meant to be walked at night."
+      }
+    },
+    {
+      "id": "gathering-frames",
+      "kind": "station",
+      "at": {
+        "x": 21.5,
+        "z": 6.8
+      },
+      "label": "The press-yard: baskets, and a gridded tray",
+      "prompt": "Work the press-yard",
+      "reach": 8,
+      "architect": {
+        "concept": "division with remainder as partition",
+        "note": "Part module: js/parts/gatheringframes.js. Chip-free by design."
+      }
+    },
+    {
+      "id": "braided-wood",
+      "kind": "station",
+      "at": {
+        "x": 2.5,
+        "z": 10.8
+      },
+      "label": "A trailhead, where ways part into the wood",
+      "prompt": "Read the trail-stone",
+      "reach": 8,
+      "architect": {
+        "concept": "trajectory unit (paths article), forest form",
+        "note": "Part module: js/parts/braidedwood.js. Gateless: walking a trail IS the choice; trails rejoin; two good ways converge at the library."
+      }
+    },
+    {
+      "id": "mill-launder",
+      "kind": "station",
+      "at": {
+        "x": 53.5,
+        "z": 4.2
+      },
+      "label": "A raised launder on six posts, dry",
+      "prompt": "Read the headstone",
+      "reach": 8,
+      "architect": {
+        "concept": "evaluate a linear rule; the water judges",
+        "note": "Part module: js/parts/milllaunder.js. Mill-yard region, past the drawbridge."
+      }
+    }
+  ],
+  "house": {
+    "x": 31.0,
+    "z": 0,
+    "w": 7.2,
+    "d": 4.6,
+    "h": 4.5,
+    "doorW": 1.3,
+    "doorH": 2.35
+  },
+  "physics": {
+    "gravity": 9.81,
+    "releaseSpeed": 12.0,
+    "releaseHeight": 1.5
+  }
+}

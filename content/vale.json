@@ -1,0 +1,490 @@
+{
+  "meta": {
+    "id": "vale-factor",
+    "title": "The Long Vale",
+    "units": "1 world unit = 1 metre. Ground plane y = 0. The vale runs south (spawn) to north (the finale)."
+  },
+  "builder": "vale",
+  "palette": {
+    "ink": "#26221d",
+    "brick": "#a8432e",
+    "parchment": "#efe6d2",
+    "vellum": "#e2d6bb",
+    "canopyFar": "#2b4438",
+    "canopyMid": "#33553f",
+    "canopyNear": "#223a2e",
+    "trunk": "#5a4a38",
+    "ground": "#4a5c3a",
+    "groundLit": "#5c6f45",
+    "stone": "#8a8578",
+    "stoneLit": "#a49d8c",
+    "gold": "#c8a24a",
+    "lamp": "#e8c877",
+    "sky": "#cfd9c4",
+    "skyHigh": "#a8bda6",
+    "mist": "#dfe6d6"
+  },
+  "player": {
+    "eye": 1.6,
+    "speed": 4.4,
+    "radius": 0.32,
+    "spawn": {
+      "x": 0,
+      "z": -60,
+      "lookAt": [
+        0,
+        1.4,
+        -52
+      ]
+    }
+  },
+  "bounds": {
+    "xMin": -22,
+    "xMax": 22,
+    "zMin": -66,
+    "zMax": 70
+  },
+  "forest": [
+    {
+      "z": -66,
+      "s": 1.2,
+      "xs": [
+        -18,
+        -12,
+        -6,
+        6,
+        12,
+        18
+      ]
+    },
+    {
+      "z": -64,
+      "s": 1.0,
+      "xs": [
+        -20.5,
+        -15,
+        15,
+        20.5
+      ]
+    },
+    {
+      "z": -58,
+      "s": 1.1,
+      "xs": [
+        -19,
+        -14.5,
+        14.5,
+        19
+      ]
+    },
+    {
+      "z": -52,
+      "s": 1.0,
+      "xs": [
+        -20,
+        -15.5,
+        15.5,
+        20
+      ]
+    },
+    {
+      "z": -46,
+      "s": 1.2,
+      "xs": [
+        -18.5,
+        -14,
+        14,
+        18.5
+      ]
+    },
+    {
+      "z": -40,
+      "s": 1.0,
+      "xs": [
+        -20.5,
+        -15,
+        15,
+        20.5
+      ]
+    },
+    {
+      "z": -34,
+      "s": 1.1,
+      "xs": [
+        -19,
+        -14.5,
+        14.5,
+        19
+      ]
+    },
+    {
+      "z": -28,
+      "s": 1.0,
+      "xs": [
+        -20,
+        -15.5,
+        15.5,
+        20
+      ]
+    },
+    {
+      "z": -22,
+      "s": 1.2,
+      "xs": [
+        -18.5,
+        -14,
+        14,
+        18.5
+      ]
+    },
+    {
+      "z": -16,
+      "s": 1.0,
+      "xs": [
+        -20.5,
+        -15,
+        15,
+        20.5
+      ]
+    },
+    {
+      "z": -10,
+      "s": 1.1,
+      "xs": [
+        -19,
+        -14.5,
+        14.5,
+        19
+      ]
+    },
+    {
+      "z": -4,
+      "s": 1.0,
+      "xs": [
+        -20,
+        -15.5,
+        15.5,
+        20
+      ]
+    },
+    {
+      "z": 2,
+      "s": 1.2,
+      "xs": [
+        -18.5,
+        -14,
+        14,
+        18.5
+      ]
+    },
+    {
+      "z": 8,
+      "s": 1.0,
+      "xs": [
+        -20.5,
+        -15,
+        15,
+        20.5
+      ]
+    },
+    {
+      "z": 14,
+      "s": 1.1,
+      "xs": [
+        -19,
+        -14.5,
+        14.5,
+        19
+      ]
+    },
+    {
+      "z": 20,
+      "s": 1.0,
+      "xs": [
+        -20,
+        -15.5,
+        15.5,
+        20
+      ]
+    },
+    {
+      "z": 26,
+      "s": 1.3,
+      "xs": [
+        -18.5,
+        -14,
+        14,
+        18.5
+      ]
+    },
+    {
+      "z": 32,
+      "s": 1.0,
+      "xs": [
+        -20.5,
+        -15,
+        15,
+        20.5
+      ]
+    },
+    {
+      "z": 38,
+      "s": 1.2,
+      "xs": [
+        -19,
+        -14.5,
+        14.5,
+        19
+      ]
+    },
+    {
+      "z": 44,
+      "s": 1.0,
+      "xs": [
+        -20,
+        -15.5,
+        15.5,
+        20
+      ]
+    },
+    {
+      "z": 50,
+      "s": 1.3,
+      "xs": [
+        -18.5,
+        -14,
+        14,
+        18.5
+      ]
+    },
+    {
+      "z": 56,
+      "s": 1.1,
+      "xs": [
+        -20.5,
+        -15,
+        15,
+        20.5
+      ]
+    },
+    {
+      "z": 62,
+      "s": 1.3,
+      "xs": [
+        -19,
+        -14.5,
+        14.5,
+        19
+      ]
+    },
+    {
+      "z": 68,
+      "s": 1.4,
+      "xs": [
+        -18,
+        -12,
+        -6,
+        6,
+        12,
+        18
+      ]
+    },
+    {
+      "z": 70,
+      "s": 1.2,
+      "xs": [
+        -15,
+        -9,
+        -3,
+        3,
+        9,
+        15
+      ]
+    }
+  ],
+  "parts": [
+    [
+      "vale-twelve",
+      "./parts/valetwelve.js"
+    ],
+    [
+      "vale-machine",
+      "./parts/valemachine.js"
+    ],
+    [
+      "vale-pair",
+      "./parts/valepair.js"
+    ],
+    [
+      "vale-zero",
+      "./parts/valezero.js"
+    ],
+    [
+      "carvings",
+      "./parts/carvings.js"
+    ]
+  ],
+  "warps": [
+    {
+      "name": "plaza (spawn)",
+      "tp": [
+        0,
+        -60,
+        0,
+        1.4,
+        -52
+      ]
+    },
+    {
+      "name": "I · twelve gate",
+      "tp": [
+        0,
+        -38,
+        0,
+        1.2,
+        -30
+      ]
+    },
+    {
+      "name": "II · the machine",
+      "tp": [
+        0,
+        -24,
+        0,
+        1.2,
+        -16
+      ]
+    },
+    {
+      "name": "III · pair fork",
+      "tp": [
+        0,
+        -4,
+        0,
+        1.2,
+        4
+      ]
+    },
+    {
+      "name": "V · zero hall",
+      "tp": [
+        0,
+        50,
+        0,
+        1.2,
+        58
+      ]
+    },
+    {
+      "name": "V · finale door",
+      "tp": [
+        0,
+        57,
+        0,
+        1.2,
+        63
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "arch-vertex",
+      "kind": "scenery",
+      "at": {
+        "x": -7,
+        "z": -52
+      },
+      "label": "A sealed arch",
+      "architect": {
+        "concept": "method world: vertex form (sealed)",
+        "note": "The choice of worlds is real from day one; this door opens in a later build."
+      }
+    },
+    {
+      "id": "arch-factor",
+      "kind": "scenery",
+      "at": {
+        "x": 0,
+        "z": -52
+      },
+      "label": "An open arch",
+      "architect": {
+        "concept": "method world: factorization (this world)",
+        "note": "The centre arch; the whole vale beyond it is this method."
+      }
+    },
+    {
+      "id": "arch-formula",
+      "kind": "scenery",
+      "at": {
+        "x": 7,
+        "z": -52
+      },
+      "label": "A sealed arch",
+      "architect": {
+        "concept": "method world: quadratic formula (sealed)",
+        "note": "Sealed honestly — stone lattice, named only here."
+      }
+    },
+    {
+      "id": "vale-twelve",
+      "kind": "station",
+      "at": {
+        "x": 0,
+        "z": -38
+      },
+      "label": "A pebble tray, and a gate that asks for twelve",
+      "prompt": "Work the tray",
+      "reach": 8,
+      "architect": {
+        "concept": "stratum: numbers. multiplication -> one factorization of 12 (open input)",
+        "note": "Part js/parts/valetwelve.js. Input classes per confusion-atlas/01; every wrong class has a repair beat, never a rejection."
+      }
+    },
+    {
+      "id": "vale-machine",
+      "kind": "station",
+      "at": {
+        "x": 0,
+        "z": -18
+      },
+      "label": "Two forms carved side by side, and feed stones",
+      "prompt": "Read the stone",
+      "reach": 8,
+      "architect": {
+        "concept": "stratum: numbers->polynomials. the evaluation bridge; feed x, factors appear in number form",
+        "note": "Part js/parts/valemachine.js. Stone order x=1->2->0 (origin beat lands last); recognition options per confusion-atlas/02; base-ten stone sealed."
+      }
+    },
+    {
+      "id": "vale-pair",
+      "kind": "station",
+      "at": {
+        "x": 0,
+        "z": 2
+      },
+      "label": "A fork where two rules part ways",
+      "prompt": "Read the trail-stone",
+      "reach": 8,
+      "architect": {
+        "concept": "stratum: polynomials, a=1. targets fork (swap bug commits (1,5)); assay stones introduced",
+        "note": "Part js/parts/valepair.js. Search strategies observed, not forked; direct-write correct here; the 1*6 carving is the a!=1 inoculation. Atlas 03."
+      }
+    },
+    {
+      "id": "vale-zero",
+      "kind": "station",
+      "at": {
+        "x": 0,
+        "z": 56
+      },
+      "label": "Two product stones, and the last door",
+      "prompt": "Read the stones",
+      "reach": 8,
+      "architect": {
+        "concept": "stratum: solving. zero-product; the =2 court; leftward walk to negative roots; finale with the fraction root as payoff",
+        "note": "Part js/parts/valezero.js. Observability law: the =2 court is load-bearing. Atlas 04."
+      }
+    }
+  ]
+}

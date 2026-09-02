@@ -1,0 +1,407 @@
+{
+  "waystones": {
+    "ask": "One of these speaks of a way that bends.",
+    "rules": [
+      {
+        "tex": "y = x + 1",
+        "c": [
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "tex": "y = 6x - x^{2}",
+        "c": [
+          -1,
+          6,
+          0
+        ]
+      },
+      {
+        "tex": "y = 7 - 2x",
+        "c": [
+          0,
+          -2,
+          7
+        ]
+      }
+    ],
+    "architect": {
+      "concept": "recognize the quadratic among linear rules",
+      "depth": "introduced"
+    }
+  },
+  "countingGate": {
+    "ask": "Set the count that brings the beam to rest.",
+    "equationTex": "2x + 3 = 11",
+    "lhs": {
+      "times": 2,
+      "plus": 3
+    },
+    "rhs": 11,
+    "min": 0,
+    "max": 9,
+    "architect": {
+      "concept": "solve a linear equation",
+      "depth": "fluent"
+    }
+  },
+  "doorRoots": {
+    "ask": "The lintel carries a rule that comes to rest at two numbers. Set both.",
+    "equationTex": "x^{2} - 5x + 6 = 0",
+    "a": 1,
+    "b": -5,
+    "c": 6,
+    "answers": [
+      2,
+      3
+    ],
+    "min": 0,
+    "max": 6,
+    "architect": {
+      "concept": "solve a factorable quadratic (a = 1)",
+      "depth": "solve"
+    }
+  },
+  "bridge": {
+    "ask": "The gaps ask their width. Leap exactly that.",
+    "gaps": [
+      {
+        "slot": 2,
+        "exprTex": "1 + 1",
+        "n": 2
+      },
+      {
+        "slot": 5,
+        "exprTex": "6 \\div 2",
+        "n": 3
+      },
+      {
+        "slot": 9,
+        "exprTex": "8 \\div 4",
+        "n": 2
+      },
+      {
+        "slot": 12,
+        "exprTex": "9 - 5",
+        "n": 4
+      }
+    ],
+    "architect": {
+      "concept": "arithmetic fluency, serialized; the answer enacted as motion",
+      "depth": "introduced"
+    }
+  },
+  "coldWell": {
+    "ask": "Bring the rope to rest, then crank.",
+    "load": 6,
+    "fixed": 2,
+    "min": 0,
+    "max": 9,
+    "architect": {
+      "concept": "one-step linear equation as balance: x + 2 = 6",
+      "tex": "x + 2 = 6",
+      "depth": "fluent"
+    }
+  },
+  "drawbridge": {
+    "gauge": {
+      "span": 7
+    },
+    "deck": {
+      "weight": 12
+    },
+    "rack": {
+      "lengths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "beam": {
+      "degPerUnit": 5,
+      "stopDeg": 25
+    },
+    "times": {
+      "pourSPerArea": 0.55,
+      "foldS": 0.9,
+      "settleSwings": 3
+    },
+    "wreck": {
+      "pair": [
+        2,
+        5
+      ]
+    },
+    "architect": {
+      "concept": "factor pair under sum and product: x² − 7x + 12",
+      "tex": "x^{2} - 7x + 12 = (x - 3)(x - 4)",
+      "depth": "solve"
+    }
+  },
+  "counterStones": {
+    "flecks": true,
+    "architect": {
+      "concept": "ambient counts mirroring nearby answers; noticing is logged",
+      "depth": "ambient"
+    }
+  },
+  "lampRoad": {
+    "ask": "A cup of oil is worth this lamp's count of flags.",
+    "rate": 3,
+    "cups": {
+      "min": 0,
+      "max": 6
+    },
+    "lamps": [
+      {
+        "x": 50.8,
+        "gapFlags": 6
+      },
+      {
+        "x": 53.6,
+        "gapFlags": 9
+      },
+      {
+        "x": 56.4,
+        "gapFlags": 6
+      },
+      {
+        "x": 59.2,
+        "gapFlags": 12
+      }
+    ],
+    "architect": {
+      "concept": "multiplication/division serialized; remainder as darkness",
+      "depth": "fluent"
+    }
+  },
+  "gatheringFrames": {
+    "ask": "Set aside what the tray cannot take, before you tip.",
+    "figs": 14,
+    "rows": 3,
+    "cols": 4,
+    "setAside": {
+      "min": 0,
+      "max": 9
+    },
+    "architect": {
+      "concept": "division with remainder as partition",
+      "depth": "fluent"
+    }
+  },
+  "millLaunder": {
+    "ask": "Set each collar to the rule, then pull the sluice.",
+    "ruleTex": "y = 12 - 2x",
+    "a1": -2,
+    "a0": 12,
+    "posts": 6,
+    "collar": {
+      "min": 0,
+      "max": 12
+    },
+    "architect": {
+      "concept": "evaluate a linear rule; slope as the steady step",
+      "depth": "fluent"
+    }
+  },
+  "bellYard": {
+    "ask": "Hang the bell where the path crosses the cord.",
+    "reps": [
+      {
+        "c": 1.0,
+        "b": 2.0,
+        "a": -0.25,
+        "h": 3.0
+      },
+      {
+        "c": 1.5,
+        "b": 1.6,
+        "a": -0.2,
+        "h": 2.6
+      },
+      {
+        "c": 0.8,
+        "b": 2.4,
+        "a": -0.3,
+        "h": 3.2
+      },
+      {
+        "c": 1.2,
+        "b": 1.8,
+        "a": -0.22,
+        "h": 2.8
+      },
+      {
+        "c": 1.0,
+        "b": 2.2,
+        "a": -0.26,
+        "h": 3.4
+      }
+    ],
+    "cordSlots": 12,
+    "tolerance": 0.5,
+    "strength": {
+      "floor": 0.2,
+      "ceil": 1.0
+    },
+    "architect": {
+      "concept": "training: crossings-at-height; performance → graded strength → band width",
+      "depth": "train + grade"
+    }
+  },
+  "help": {
+    "toolbox": "Your instruments. Choose one and it casts its sight where you face; R re-casts it from wherever you stand. The dots are how firmly each is held — a firmer hold reads narrower.",
+    "readout": "The chosen instrument's reading, standing in the world. Set the release angle below (type an exact number if you already know it), then throw with Space.",
+    "gate": "A counting gate. The carved rule asks for a count: type it and set it. The beam tips toward the heavier side by exactly the difference — brought level, it lifts and the way opens.",
+    "door": "The door takes two numbers — the two where the lintel's rule comes to rest. Set both slots; the frame only lets go for the right pair, in any order.",
+    "stone": "A way into the practice-yard. Enter, train, and return to the spot you left.",
+    "doc": "The level's end, for now. Everything you did on the way is in the log.",
+    "log": "Everything this session did, timestamped, newest first. Download keeps it as a file.",
+    "cold-well": "A counterweighted hoist. Jars sit on the sunken tray; iron rings hang opposite, some already fixed. Count both, type how many rings to add, and the crank does the rest — balance rises steadily; a wrong count runs away at the speed of its error.",
+    "lamp-road": "Each lamp turns cups of oil into a fixed count of light-flags toward the next post. Count the dark flags and pour exactly enough. Too little leaves the remainder dark to count again; too much carries on and lights the start of the next stretch.",
+    "gathering-frames": "The press tray takes one fig per hollow, no more. Count the basket against the tray, set aside the difference, then tip. Misjudge it and the extra bruises on the grass — or the beam refuses a tray with empty hollows.",
+    "mill-launder": "Six collars set the channel's fall, and the headstone carves the rule they must follow. E at a post sets its collar; the sluice sends the water as far as the rule holds — it spills exactly where the rule breaks.",
+    "bell-yard": "Hang the bell on the knot where the falling path will cross the cord, then watch the spark ride the rule — it rings only the truth. Five hangs make your measure, and the yard grades how firmly the Falling Arc is held. The return stone takes you back."
+  },
+  "mountainPassage": {
+    "quadratic": {
+      "a": 2,
+      "b": 7,
+      "c": 6,
+      "tex": "2x^{2} + 7x + 6"
+    },
+    "markers": [
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "tag": "true"
+      },
+      {
+        "pair": [
+          1,
+          6
+        ],
+        "tag": "ignores-a"
+      },
+      {
+        "pair": [
+          1,
+          7
+        ],
+        "tag": "swap-roles"
+      }
+    ],
+    "probe": {
+      "a": 1,
+      "b": 5,
+      "c": 6,
+      "tex": "x^{2} + 5x + 6"
+    },
+    "aOneDrills": [
+      {
+        "a": 1,
+        "b": 3,
+        "c": 2,
+        "tex": "x^{2} + 3x + 2"
+      },
+      {
+        "a": 1,
+        "b": 5,
+        "c": 6,
+        "tex": "x^{2} + 5x + 6"
+      }
+    ],
+    "methods": [
+      {
+        "id": "grouping",
+        "tex": "2x^{2} + 3x + 4x + 6"
+      },
+      {
+        "id": "box",
+        "tex": "(x + 2)(2x + 3)"
+      }
+    ],
+    "factoredTex": "(x + 2)(2x + 3)",
+    "architect": {
+      "concept": "trajectory unit: diagnostic fork, misconception branches, physical rejoin, two good ways converging",
+      "depth": "solve (a \\neq 1)"
+    }
+  },
+  "instruments": [
+    {
+      "id": "counting-cord",
+      "name": "Counting Cord",
+      "blurb": "A knotted cord. It counts paces and nothing else.",
+      "model": "constant",
+      "strength": 1.0,
+      "architect": {
+        "concept": "measurement",
+        "depth": "introduced",
+        "invokes": [],
+        "note": "A genuinely inapplicable option. Choosing it is not punished — it reads a distance."
+      }
+    },
+    {
+      "id": "plumb-and-level",
+      "name": "Plumb & Level",
+      "blurb": "Sights a straight line from your hand. It has no notion of falling.",
+      "model": "linear",
+      "strength": 1.0,
+      "architect": {
+        "concept": "linear rule; slope",
+        "depth": "fluent",
+        "invokes": [
+          "slope"
+        ],
+        "note": "Law 3 — the straight line is the honest first-order reading, and the player watches it be wrong."
+      }
+    },
+    {
+      "id": "falling-arc",
+      "name": "The Falling Arc",
+      "blurb": "Reads the whole path of a thrown thing, and where it passes a given height.",
+      "model": "quadratic",
+      "strength": 0.42,
+      "architect": {
+        "concept": "quadratic rule; crossings; peak",
+        "depth": "recognition + solve at height",
+        "invokes": [
+          "quadratic-solve"
+        ],
+        "note": "Held at partial strength on purpose. Law 5 — the arc reads as a band and the crossings as ranges, never a confident wrong number."
+      }
+    }
+  ],
+  "hintLadder": [
+    {
+      "rung": 0,
+      "cost": 0,
+      "text": "You are carrying three instruments. One of them reads paths."
+    },
+    {
+      "rung": 1,
+      "cost": 1,
+      "text": "A thrown stone does not travel in a straight line. Whatever you sight with must know that."
+    },
+    {
+      "rung": 2,
+      "cost": 2,
+      "text": "The Falling Arc is the instrument for this."
+    },
+    {
+      "rung": 3,
+      "cost": 4,
+      "text": "Cast the sight at the fig, then set the release so a crossing of the fig's height lands on it."
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "id": "wood-ways",
+    "title": "The Ways",
+    "units": "1 world unit = 1 metre. Trailhead pocket near origin; the birch pocket far north (z ~300), isolated by fog."
+  },
+  "builder": "wood",
+  "palette": {
+    "ink": "#26221d",
+    "parchment": "#efe6d2",
+    "vellum": "#e2d6bb",
+    "canopyFar": "#2b4438",
+    "canopyMid": "#33553f",
+    "canopyNear": "#223a2e",
+    "trunk": "#5a4a38",
+    "ground": "#4a5c3a",
+    "groundLit": "#5c6f45",
+    "stone": "#8a8578",
+    "stoneLit": "#a49d8c",
+    "gold": "#c8a24a",
+    "lamp": "#e8c877",
+    "sky": "#cfd9c4",
+    "skyHigh": "#a8bda6",
+    "mist": "#dfe6d6"
+  },
+  "player": {
+    "eye": 1.6,
+    "speed": 4.4,
+    "radius": 0.32,
+    "spawn": {
+      "x": 0,
+      "z": -14,
+      "lookAt": [
+        0,
+        1.3,
+        -4
+      ]
+    }
+  },
+  "bounds": {
+    "xMin": -380,
+    "xMax": 380,
+    "zMin": -396,
+    "zMax": 396
+  },
+  "parts": [
+    [
+      "wood-way",
+      "./parts/woodway.js"
+    ],
+    [
+      "carvings",
+      "./parts/carvings.js"
+    ]
+  ],
+  "warps": [
+    {
+      "name": "trailhead",
+      "tp": [
+        0,
+        -14,
+        0,
+        1.3,
+        -4
+      ]
+    },
+    {
+      "name": "birch: mouth",
+      "tp": [
+        0,
+        292,
+        0,
+        1.2,
+        300
+      ]
+    },
+    {
+      "name": "birch: search table",
+      "tp": [
+        2,
+        310,
+        0,
+        1.2,
+        318
+      ]
+    },
+    {
+      "name": "birch: the arch",
+      "tp": [
+        -3,
+        326,
+        0,
+        1.2,
+        334
+      ]
+    },
+    {
+      "name": "birch: grouping stand",
+      "tp": [
+        2,
+        344,
+        0,
+        1.2,
+        352
+      ]
+    },
+    {
+      "name": "birch: probe / home",
+      "tp": [
+        0,
+        352,
+        0,
+        1.2,
+        360
+      ]
+    },
+    {
+      "name": "pine: mouth",
+      "tp": [
+        -300,
+        292,
+        -300,
+        1.2,
+        300
+      ]
+    },
+    {
+      "name": "pine: search table",
+      "tp": [
+        -298,
+        310,
+        -300,
+        1.2,
+        318
+      ]
+    },
+    {
+      "name": "pine: the arch",
+      "tp": [
+        -303,
+        326,
+        -303,
+        1.2,
+        334
+      ]
+    },
+    {
+      "name": "rise: mouth",
+      "tp": [
+        300,
+        292,
+        300,
+        1.2,
+        300
+      ]
+    },
+    {
+      "name": "rise: search table",
+      "tp": [
+        302,
+        310,
+        300,
+        1.2,
+        318
+      ]
+    },
+    {
+      "name": "rise: the arch",
+      "tp": [
+        297,
+        326,
+        297,
+        1.2,
+        334
+      ]
+    },
+    {
+      "name": "rise: slabs / summit",
+      "tp": [
+        302,
+        344,
+        300,
+        1.2,
+        356
+      ]
+    },
+    {
+      "name": "training grove",
+      "tp": [
+        0,
+        -288,
+        0,
+        1.2,
+        -300
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "way-item",
+      "kind": "station",
+      "at": {
+        "x": 0,
+        "z": -6
+      },
+      "label": "A stone bearing the asking",
+      "prompt": "Read the stone",
+      "reach": 7,
+      "architect": {
+        "concept": "trajectory wood: the a-not-1 item; three ways part here",
+        "note": "Part js/parts/woodway.js. Each mouth previews its world; choosing = walking through; only the chosen path is ever in view."
+      }
+    },
+    {
+      "id": "mouth-birch",
+      "kind": "scenery",
+      "at": {
+        "x": 10,
+        "z": 16
+      },
+      "label": "A bright way into white trunks",
+      "architect": {
+        "concept": "ignores-a way (Birchlight) — targets product c, sum b; bright by design: the trap is comfort",
+        "note": "Portal to the birch pocket. Blaze: amber round."
+      }
+    },
+    {
+      "id": "mouth-rise",
+      "kind": "scenery",
+      "at": {
+        "x": 0,
+        "z": 18
+      },
+      "label": "A climbing way over roots",
+      "architect": {
+        "concept": "true way (Root & Rise) — product a*c, sum b. SEALED in this slice",
+        "note": "Blaze: red bar. Path not yet cut; branch-weave barrier."
+      }
+    },
+    {
+      "id": "mouth-pine",
+      "kind": "scenery",
+      "at": {
+        "x": -10,
+        "z": 16
+      },
+      "label": "A hushed way under tall firs",
+      "architect": {
+        "concept": "swap way (Pine Cathedral) — product b, sum c. SEALED in this slice",
+        "note": "Blaze: white diamond. Path not yet cut; branch-weave barrier."
+      }
+    }
+  ]
+}

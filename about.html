@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — A Learning World</title>
+<style>
+  :root{
+    --ink:#26221d; --ink-soft:#5c554a; --gold:#8a6d21;
+    --parchment:#efe6d2; --line:#cbbf9f;
+    --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { margin: 0; box-sizing: border-box; }
+  body { color: var(--ink); font: 16.5px/1.62 var(--serif); }
+  #bg { position: fixed; inset: 0; z-index: 0; }
+  main { position: relative; z-index: 1; display: flex; justify-content: center; padding: 7vh 20px 12vh; }
+  article {
+    max-width: 640px; background: rgba(239,230,210,.93); border: 1px solid var(--line);
+    border-radius: 8px; padding: 42px 48px 38px; box-shadow: 0 4px 26px rgba(38,34,29,.25);
+    backdrop-filter: blur(3px);
+  }
+  h1 { font-weight: normal; font-size: 1.9em; margin-bottom: .15em; letter-spacing: .01em; }
+  .back { font-family: var(--sans); font-size: .82em; margin-bottom: 1.8em; }
+  a { color: #4a5c3a; }
+  h2 { font-weight: normal; font-size: 1.28em; margin: 1.7em 0 .5em; border-bottom: 1px solid var(--line); padding-bottom: .25em; }
+  p { margin: .8em 0; }
+  ul { margin: .8em 0 .8em 1.3em; }
+  li { margin: .5em 0; }
+  b { font-weight: 600; }
+  .k { font-family: var(--mono); font-size: .8em; background: #e4d9be; border: 1px solid var(--line); padding: .1em .45em; border-radius: 4px; }
+  .quiet { color: var(--ink-soft); font-family: var(--sans); font-size: .86em; line-height: 1.55; border-left: 2px solid var(--gold); padding-left: 12px; }
+  @media (max-width: 640px) { article { padding: 30px 22px; } }
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<main>
+<article>
+  <h1>A Learning World</h1>
+  <p class="back"><a href="index.html">← back</a></p>
+
+  <h2>How to play</h2>
+  <ul>
+    <li>Pick a world from the front page:
+      <ul>
+        <li><b>The Orchard Below the Wall</b>: the first build. Separate stations along a road (a bridge, a counting gate, a thrown stone, a locked door).</li>
+        <li><b>The Long Vale</b>: one skill built up in chapters. Each chapter ends at a gate you open by using its idea.</li>
+        <li><b>The Ways</b>: one problem, three paths. Described below.</li>
+      </ul>
+    </li>
+    <li>Click the view to look around · <span class="k">W A S D</span> to walk · arrow keys also look.</li>
+    <li><span class="k">E</span> interacts with whatever you are looking at · <span class="k">Enter</span> submits an answer.</li>
+    <li><span class="k">N</span> toggles night · <span class="k">Tab</span> shows the design notes behind each station.</li>
+    <li>The warp menu (top bar) jumps between areas. It exists for testing and is marked in the log.</li>
+    <li>Answers are checked by computation at runtime, not against stored answer keys. A record of your actions stays in your browser; the Log button downloads it, and nothing is sent anywhere.</li>
+    <li>Most on-screen text is placeholder wording. The mathematics is exact.</li>
+  </ul>
+
+  <h2>An example: designing a component as a tool of thought</h2>
+
+  <p>Tools of thought are simple mechanisms built on something known about how
+  people learn, packaged so they can be reused. Spaced repetition is the
+  familiar one: it takes a single finding, that memory fades on a schedule and
+  that review timed to that schedule strengthens it, and turns it into a tool
+  (cards plus a scheduler) that works for any content. The Ways is an attempt
+  at the same kind of tool for a different target: not remembering, but
+  diagnosing and repairing understanding inside a multi-step skill.</p>
+
+  <p>The design, concretely:</p>
+
+  <ul>
+    <li><b>The problem:</b> factor 2x² + 7x + 6. It is chosen because the
+    leading coefficient forces the general rule: find two numbers that
+    multiply to a·c and add to b. Students often only half-know it.</li>
+    <li><b>The choice:</b> at a trailhead, three paths, each marked with a rule
+    for the two numbers: multiply to 12, add to 7 (correct; it uses a·c);
+    multiply to 6, add to 7 (the a = 1 habit carried over); multiply to 7, add
+    to 6 (the two roles swapped). The wrong rules are not random distractors.
+    Each is a documented, common misunderstanding, so the choice itself
+    reports what the student currently thinks.</li>
+    <li><b>The consequence:</b> choosing a path means walking into it, and each
+    path plays the chosen rule out honestly. On the a = 1 path the rule keeps
+    working: a pair exists, and the split of 7x checks out. It fails only at
+    the grouping step, where the parentheses refuse to match. That is exactly
+    where this misconception actually breaks, and the student watches it break
+    instead of being told.</li>
+    <li><b>The repair:</b> minimal by design. A quick a = 1 problem confirms
+    what the student does know. One connection is made: the product target was
+    a·c all along; with a = 1 it merely looked like c. Then the original
+    problem is asked again. The path leads back to the trailhead, and the
+    re-choice, not the repair, is the real test.</li>
+    <li><b>The record:</b> every choice, answer, and timing is logged: which
+    path was taken, how long the decision took, whether the repair carried
+    back to the original problem.</li>
+  </ul>
+
+  <p>The pattern (wrong options designed to diagnose, consequences that appear
+  where the misunderstanding really breaks, a minimal repair, a return to the
+  choice) does not depend on 3D or on games. The same component could run as a
+  worksheet, a branched video, or a conversation. The world version adds one
+  thing: the structure of the solution becomes a space you move through, and
+  remember as a place.</p>
+
+  <h2>Memory: the carvings</h2>
+
+  <p>When you answer a station correctly, its stone is carved: an inscription
+  appears beside it with one more piece of insight about the idea. The reward
+  for being right is more information. A reader who already knew it confirms
+  their understanding; a reader who did not gets the idea stated once, plainly,
+  at the moment they earned it.</p>
+
+  <p>Every carving is also written to a memory kept in your browser (nothing is
+  sent anywhere). Carvings fade: strength drops over minutes for now, a
+  placeholder schedule until the real model, tuned by difficulty and
+  performance, replaces it. A faded carving clouds to dots and withholds its
+  insight until it is read again. Reading a carving restores it and counts as
+  a review. Fading never locks anything; it clouds assistance and nothing
+  else.</p>
+
+  <p>The <b>Carvings</b> button in any world opens the Still Place: a quiet
+  ring where everything you have carved stands as a stone, whichever world it
+  came from. Reading a stone there is the same review. Fading plus review is
+  the raw mechanism of spaced repetition; here it lives as a place you visit
+  rather than a card queue.</p>
+
+  <p class="quiet">Other components here follow other findings the same way:
+  practice stations for revision, and honest instruments whose readings degrade
+  when a skill fades. Spaced repetition, worked examples, retrieval practice:
+  the aim is a shelf of such mechanisms, each small, each grounded, each
+  reusable across content.</p>
+
+  <p class="back" style="margin-top:2em"><a href="index.html">← back</a></p>
+</article>
+</main>
+<script type="module">
+import * as THREE from './vendor/three/three.module.js';
+import { rng, mat, jitter, tree } from './js/build.js';
+
+const P = {
+  canopyFar: '#2b4438', canopyMid: '#33553f', canopyNear: '#223a2e', trunk: '#5a4a38',
+  ground: '#4a5c3a', groundLit: '#5c6f45', sky: '#cfd9c4', skyHigh: '#a8bda6', mist: '#dfe6d6',
+};
+const canvas = document.getElementById('bg');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.14;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(new THREE.Color(P.mist), 16, 60);
+const camera = new THREE.PerspectiveCamera(50, 1, .1, 200);
+
+const sky = new THREE.Mesh(
+  new THREE.SphereGeometry(150, 24, 12),
+  new THREE.ShaderMaterial({
+    side: THREE.BackSide, depthWrite: false, fog: false,
+    uniforms: { top: { value: new THREE.Color(P.skyHigh) }, bottom: { value: new THREE.Color(P.mist) } },
+    vertexShader: 'varying vec3 vP; void main(){ vP = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }',
+    fragmentShader: 'uniform vec3 top; uniform vec3 bottom; varying vec3 vP; void main(){ float t = clamp(normalize(vP).y * 1.6 + 0.18, 0.0, 1.0); gl_FragColor = vec4(mix(bottom, top, t), 1.0); }',
+  })
+);
+scene.add(sky);
+scene.add(new THREE.HemisphereLight(new THREE.Color(P.sky), new THREE.Color('#43503b'), 1.05));
+scene.add(new THREE.AmbientLight(new THREE.Color('#4a5540'), .8));
+const sun = new THREE.DirectionalLight('#f6e8c8', 1.7);
+sun.position.set(10, 20, -6); sun.castShadow = true;
+sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left: -26, right: 26, top: 30, bottom: -20, near: 1, far: 60 });
+sun.shadow.bias = -.0004;
+scene.add(sun);
+
+const r = rng(515);
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(120, 120, 48, 48), mat(P.ground, { flatShading: false }));
+ground.rotateX(-Math.PI / 2);
+{ const a = ground.geometry.attributes.position;
+  for (let i = 0; i < a.count; i++) a.setZ(i, Math.sin(a.getX(i) * .2) * Math.cos(a.getY(i) * .17) * .3);
+  ground.geometry.computeVertexNormals();
+}
+ground.receiveShadow = true;
+scene.add(ground);
+
+const strip = (x0, z0, x1, z1, w) => {
+  const L = Math.hypot(x1 - x0, z1 - z0);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, L), mat(P.groundLit, { flatShading: false }));
+  m.rotateX(-Math.PI / 2);
+  m.rotation.z = Math.atan2(x1 - x0, z1 - z0);
+  m.position.set((x0 + x1) / 2, .04, (z0 + z1) / 2);
+  m.receiveShadow = true;
+  scene.add(m);
+};
+strip(0, -12, 0, 2, 1.6);
+strip(0, 2, -8, 9, 1.1); strip(0, 2, 0, 9, 1.1); strip(0, 2, 8, 9, 1.1);
+
+for (const [x, glow] of [[8, '#e8d9a8'], [0, '#cfe0b8'], [-8, '#eef2da']]) {
+  const g = new THREE.Group();
+  for (const dx of [-1.7, 1.7]) {
+    const post = new THREE.Mesh(new THREE.BoxGeometry(.62, 4.6, .62), mat('#8a8578'));
+    post.position.set(dx, 2.3, 0); post.castShadow = true; g.add(post);
+  }
+  const lintel = new THREE.Mesh(new THREE.BoxGeometry(4.6, .62, .8), mat('#a49d8c'));
+  lintel.position.y = 4.75; lintel.castShadow = true; g.add(lintel);
+  const slab = new THREE.Mesh(new THREE.PlaneGeometry(3.1, 4.3),
+    new THREE.MeshBasicMaterial({ color: glow, transparent: true, opacity: .2, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending }));
+  slab.position.set(0, 2.25, .1);
+  g.add(slab);
+  g.position.set(x, 0, 10);
+  scene.add(g);
+}
+for (let i = 0; i < 46; i++) {
+  const x = -34 + r() * 68, z = -6 + r() * 34;
+  if (Math.abs(x) < 12 && z < 16) continue;
+  if (z > 8 && z < 13) continue;
+  const t = tree(P, Math.round(x * 977 + z * 131), .9 + r() * .7);
+  t.group.position.set(x, 0, z);
+  scene.add(t.group);
+}
+{
+  const geo = new THREE.ConeGeometry(.045, .3, 5); geo.translate(0, .15, 0);
+  const m = new THREE.MeshStandardMaterial({ flatShading: true, roughness: 1 });
+  const inst = new THREE.InstancedMesh(geo, m, 500);
+  const M = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), sc = new THREE.Vector3();
+  for (let i = 0; i < 500; i++) {
+    const x = -30 + r() * 60, z = -10 + r() * 32;
+    e.set((r() - .5) * .2, r() * Math.PI, (r() - .5) * .2); q.setFromEuler(e);
+    sc.setScalar(.7 + r() * 1.2);
+    M.compose(new THREE.Vector3(x, 0, z), q, sc);
+    inst.setMatrixAt(i, M);
+    inst.setColorAt(i, jitter(r() < .3 ? P.groundLit : '#54683c', r, .02, .1, .1));
+  }
+  inst.receiveShadow = true;
+  scene.add(inst);
+}
+
+function resize() {
+  renderer.setSize(innerWidth, innerHeight);
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize); resize();
+
+let t0 = performance.now();
+(function frame(now) {
+  const t = (now - t0) / 1000;
+  camera.position.set(Math.sin(t * .09) * .7, 2.7 + Math.sin(t * .17) * .1, -9.5);
+  camera.lookAt(0, 2.6, 10);
+  renderer.render(scene, camera);
+  requestAnimationFrame(frame);
+})(t0);
+</script>
+</body>
+</html>

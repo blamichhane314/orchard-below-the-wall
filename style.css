@@ -1,0 +1,161 @@
+/* Art direction: ancient, soft-graphic, flat. Parchment and ink, one brick accent,
+   one gold. No gradients doing work a shape should do. Prose is set for reading,
+   because most of the player's time is spent reading. */
+
+:root{
+  --ink:#26221d; --ink-soft:#5c554a; --brick:#a8432e; --gold:#8a6d21;
+  --parchment:#efe6d2; --vellum:#e4d9be; --line:#cbbf9f;
+  --panel-w: 430px;
+  --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:#1a1f1a;color:var(--ink);font-family:var(--serif)}
+#app{position:fixed;inset:0;overflow:hidden}
+#world{position:absolute;inset:0;width:100%;height:100%;display:block}
+#labels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+
+/* ---------- world-space labels: mathematics pinned to world coordinates ---------- */
+.wlabel{
+  position:absolute;left:0;top:0;white-space:nowrap;pointer-events:none;
+  will-change:transform;font-size:13.5px;line-height:1;
+  padding:5px 9px;border-radius:3px;
+  background:rgba(239,230,210,.94);border:1px solid var(--line);
+  color:var(--ink);box-shadow:0 1px 0 rgba(38,34,29,.16), 0 3px 10px rgba(38,34,29,.10);
+}
+.wlabel .katex{font-size:1.02em}
+.wlabel-rule{background:rgba(239,230,210,.74);border-style:dashed;color:var(--ink-soft);font-size:12px;padding:3px 7px}
+.wlabel-claim{background:var(--brick);border-color:#7d2f1f;color:#fbeee9}
+.wlabel-claim .katex{color:#fbeee9}
+.wlabel-solved{background:var(--parchment);border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,162,74,.18),0 3px 10px rgba(38,34,29,.12)}
+.wlabel-partial{background:repeating-linear-gradient(135deg,rgba(239,230,210,.95),rgba(239,230,210,.95) 6px,rgba(228,217,190,.95) 6px,rgba(228,217,190,.95) 12px);border-style:dashed;border-color:var(--brick);color:var(--ink-soft)}
+.wlabel-model,.wlabel-model-partial{font-size:12.5px;background:rgba(239,230,210,.97)}
+.wlabel-model-partial{border-style:dashed;border-color:var(--brick)}
+.wlabel-architect{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;background:rgba(38,34,29,.88);color:#d8e6c9;border-color:#3c4a37;padding:3px 6px}
+.wlabel-architect .katex{color:#d8e6c9;font-size:.95em}
+
+/* ---------- hud ---------- */
+#hud{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;gap:14px;
+  padding:10px 16px;font-family:var(--sans);font-size:12.5px;
+  background:linear-gradient(rgba(26,31,26,.62),rgba(26,31,26,0));color:#e9efe0}
+.hud-title{font-family:var(--serif);font-size:15px;letter-spacing:.02em}
+.hud-keys{opacity:.72;margin-left:auto}
+.hud-keys b{font-family:var(--mono);opacity:.95}
+.hud-btn{font-family:var(--sans);font-size:12px;padding:5px 11px;border-radius:3px;cursor:pointer;
+  background:rgba(239,230,210,.12);border:1px solid rgba(239,230,210,.32);color:#e9efe0;text-decoration:none}
+.hud-btn:hover{background:rgba(239,230,210,.22)}
+.hud-btn.is-on{background:var(--parchment);color:var(--ink);border-color:var(--parchment)}
+
+/* ---------- proximity prompt ---------- */
+#prompt{position:absolute;left:50%;bottom:34px;transform:translateX(-50%) translateY(8px);
+  opacity:0;transition:opacity .16s,transform .16s;pointer-events:none;
+  background:rgba(38,34,29,.9);color:var(--parchment);padding:8px 15px;border-radius:4px;
+  font-family:var(--sans);font-size:13px;letter-spacing:.01em}
+#prompt.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#prompt em{opacity:.66;font-style:italic;font-family:var(--serif)}
+.ekey{display:inline-block;font-family:var(--mono);font-size:11px;background:var(--parchment);color:var(--ink);
+  padding:1px 6px;border-radius:2px;margin-right:6px}
+
+/* ---------- panel: the long-form surface ---------- */
+/* a floating parchment card, not a separate section: the world stays present
+   around it, it breathes in and out, and walking away dissolves it */
+#panel{position:absolute;top:auto;right:16px;bottom:16px;width:404px;max-width:88vw;max-height:72vh;
+  background:rgba(239,230,210,.97);border:1px solid var(--line);border-radius:10px;
+  transform:translateY(14px);opacity:0;pointer-events:none;
+  transition:transform .18s ease,opacity .18s ease;overflow-y:auto;
+  box-shadow:0 14px 44px rgba(26,31,26,.36)}
+#panel.open{transform:none;opacity:1;pointer-events:auto}
+@keyframes panel-nudge{0%,100%{translate:0 0}25%{translate:-4px 0}55%{translate:3px 0}80%{translate:-2px 0}}
+#panel.nudge{animation:panel-nudge .2s ease}
+#panel-close{position:absolute;top:10px;right:12px;border:0;background:transparent;font-size:22px;
+  line-height:1;color:var(--ink-soft);cursor:pointer;font-family:var(--sans)}
+#panel-info{position:absolute;top:12px;right:44px;border:0;background:transparent;font-size:17px;
+  line-height:1;color:var(--ink-soft);cursor:pointer;font-family:var(--sans);opacity:.75}
+#panel-info:hover{opacity:1}
+#panel-info.is-on{color:var(--gold);opacity:1}
+#panel-help{display:none;margin:44px 22px 0;padding:11px 14px;background:var(--vellum);
+  border-left:2px solid var(--gold);border-radius:2px;font-size:13.5px;line-height:1.55;
+  color:var(--ink-soft);font-family:var(--sans)}
+#panel-help.open{display:block}
+#panel-help.open + #panel-body{padding-top:14px}
+#panel-body{padding:20px 22px 28px;max-width:60ch}
+#panel h2{font-size:23px;font-weight:600;margin:0 0 6px;letter-spacing:.005em}
+#panel h3{font-family:var(--sans);font-size:11.5px;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--ink-soft);margin:26px 0 10px;font-weight:600}
+#panel p{font-size:15.5px;line-height:1.62;margin:0 0 13px}
+.lede{color:var(--ink-soft);font-style:italic}
+.muted{color:var(--ink-soft)}
+.tiny{font-size:13px}
+.eq{margin:15px 0 17px;padding:13px 14px;background:var(--vellum);border-left:2px solid var(--gold);
+  border-radius:2px;overflow-x:auto}
+.eq .katex{font-size:1.06em}
+.claim-note{color:var(--brick);font-weight:600}
+.partial-note{color:var(--gold);font-style:italic}
+
+.tools{display:flex;flex-direction:column;gap:9px}
+.tool{display:block;width:100%;text-align:left;cursor:pointer;font-family:inherit;
+  background:var(--vellum);border:1px solid var(--line);border-radius:4px;padding:12px 14px}
+.tool:hover{border-color:var(--gold)}
+.tool.is-sel{border-color:var(--brick);box-shadow:inset 3px 0 0 var(--brick)}
+.tool-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.tool-n{font-size:16px;font-weight:600}
+.dots{font-size:10px;color:var(--gold);letter-spacing:2px}
+.tool-b{font-size:14px !important;color:var(--ink-soft);margin:5px 0 0 !important;line-height:1.5 !important}
+.arch-inline{margin-top:8px;font-family:var(--mono);font-size:10.5px;color:#4a5c3a}
+
+.release{margin-top:24px;padding-top:6px;border-top:1px solid var(--line)}
+.row{display:flex;align-items:center;gap:10px;margin:11px 0;font-family:var(--sans);font-size:12.5px;color:var(--ink-soft)}
+.row span:first-child{width:44px}
+.row input[type=range]{flex:1;accent-color:var(--brick)}
+.row input[type=number]{width:82px;font-family:var(--mono);font-size:13px;padding:4px 6px;
+  border:1px solid var(--line);border-radius:3px;background:#fff8ea;color:var(--ink)}
+.unit{font-family:var(--mono)}
+
+.btn{font-family:var(--sans);font-size:13px;padding:9px 15px;border-radius:3px;cursor:pointer;border:1px solid transparent}
+.btn.primary{background:var(--brick);color:#fbeee9;width:100%;margin-top:8px;font-size:14px}
+.btn.primary:disabled{opacity:.45;cursor:default}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--gold)}
+.cost{font-family:var(--mono);font-size:11px;opacity:.6;margin-left:6px}
+.hints{margin-top:8px}
+.hint{background:var(--vellum);border-left:2px solid var(--brick);padding:9px 12px;font-size:14.5px !important}
+
+.architect-block{margin-top:26px;padding:14px 16px;background:#26221d;color:#d8e6c9;border-radius:4px;font-family:var(--sans)}
+.architect-block h3{color:#9fb58c;margin-top:0}
+.architect-block dl{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:12.5px;margin:0}
+.architect-block dt{font-family:var(--mono);font-size:10.5px;color:#8fa87c;text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+.architect-block dd{margin:0}
+.architect-block .note{font-size:13px !important;line-height:1.55 !important;color:#c3d3b2;margin:12px 0 0 !important;font-family:var(--serif)}
+.architect-block .solutions{font-family:var(--mono);font-size:11.5px !important;color:#e0c97a;margin:8px 0 0 !important}
+
+.gate-in{display:flex;gap:9px;margin:14px 0}
+.gate-in input{flex:1;font-family:var(--mono);padding:8px 10px;border:1px solid var(--line);border-radius:3px;background:#fff8ea}
+.gate-in .btn{margin-top:0;width:auto;white-space:nowrap}
+.gate-ok{color:#2f6b3a;font-weight:600}
+.gate-no{color:var(--brick);font-weight:600}
+
+table.log{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px;margin-top:14px}
+table.log td{padding:4px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+table.log .t{color:var(--ink-soft);white-space:nowrap;width:52px}
+table.log .ty{color:var(--brick);white-space:nowrap}
+table.log .d{color:var(--ink-soft);word-break:break-word}
+
+/* ---------- engine-spike additions ---------- */
+#crosshair{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px 0 0 -3px;
+  border-radius:50%;background:rgba(239,230,210,.65);box-shadow:0 0 0 1px rgba(38,34,29,.35);
+  pointer-events:none;opacity:0;transition:opacity .2s}
+body.locked #crosshair{opacity:1}
+.wlabel.occ{opacity:.26}
+.wlabel.cull{opacity:0}
+.wlabel{transition:opacity .18s}
+.hud-warp{font-family:var(--mono);font-size:11px;max-width:150px;appearance:auto;
+  background:rgba(38,34,29,.55);border-color:rgba(239,230,210,.22)}
+.hud-warp option{background:#26221d;color:#e9efe0}
+.wlabel-key{background:none;border:none;box-shadow:none;padding:0}
+.wlabel-key .ekey{opacity:.92;box-shadow:0 1px 4px rgba(26,31,26,.4)}
+a.hud-btn{text-decoration:none;color:inherit;display:inline-block}
+#trace{position:fixed;left:0;right:0;bottom:9vh;text-align:center;pointer-events:none;
+  font-family:var(--serif);font-size:15px;color:var(--parchment);opacity:0;
+  text-shadow:0 1px 8px rgba(20,24,18,.55);transition:opacity .35s}
+#trace .katex{font-size:1.05em}

@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "id": "still-place",
+    "title": "The Still Place",
+    "units": "1 world unit = 1 metre. One ring, dusk light."
+  },
+  "builder": "still",
+  "palette": {
+    "ink": "#26221d",
+    "parchment": "#efe6d2",
+    "vellum": "#e2d6bb",
+    "canopyFar": "#2b4438",
+    "canopyMid": "#33553f",
+    "canopyNear": "#223a2e",
+    "trunk": "#5a4a38",
+    "ground": "#4a5c3a",
+    "groundLit": "#5c6f45",
+    "stone": "#8a8578",
+    "stoneLit": "#a49d8c",
+    "gold": "#c8a24a",
+    "lamp": "#e8c877",
+    "sky": "#cfd9c4",
+    "skyHigh": "#a8bda6",
+    "mist": "#dfe6d6"
+  },
+  "player": {
+    "eye": 1.6,
+    "speed": 3.6,
+    "radius": 0.32,
+    "spawn": {
+      "x": 0,
+      "z": -11,
+      "lookAt": [
+        0,
+        1.2,
+        0
+      ]
+    }
+  },
+  "bounds": {
+    "xMin": -18,
+    "xMax": 18,
+    "zMin": -16,
+    "zMax": 18
+  },
+  "parts": [
+    [
+      "still-stones",
+      "./parts/stillstones.js"
+    ]
+  ],
+  "warps": [
+    {
+      "name": "the ring",
+      "tp": [
+        0,
+        -11,
+        0,
+        1.2,
+        0
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "still-ring",
+      "kind": "station",
+      "at": {
+        "x": 0,
+        "z": 0
+      },
+      "label": "A ring of carved stones",
+      "prompt": "Read a stone",
+      "reach": 7,
+      "architect": {
+        "concept": "the review surface: every earned carving, from all worlds; reading restores strength (decay v0)",
+        "note": "Part js/parts/stillstones.js reads the shared bag (js/bag.js, localStorage lw.bag)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "instruments": [],
+  "twelve": {
+    "n": 12,
+    "openers": {
+      "rows": 3,
+      "cols": 4
+    }
+  },
+  "machine": {
+    "a": 1,
+    "b": 5,
+    "c": 6,
+    "tex": "x^{2} + 5x + 6",
+    "factoredTex": "(x + 2)(x + 3)",
+    "stoneOrder": [
+      1,
+      2,
+      0
+    ]
+  },
+  "pair": {
+    "a": 1,
+    "b": 5,
+    "c": 6,
+    "tex": "x^{2} + 5x + 6",
+    "factoredTex": "(x + 2)(x + 3)",
+    "inocTex": "1 \\cdot 6"
+  },
+  "braid": {
+    "main": {
+      "a": 2,
+      "b": 7,
+      "c": 6,
+      "tex": "2x^{2} + 7x + 6",
+      "factoredTex": "(2x + 3)(x + 2)"
+    },
+    "companion": {
+      "a": 2,
+      "b": 8,
+      "c": 6,
+      "tex": "2x^{2} + 8x + 6",
+      "gcf": 2,
+      "factoredTex": "2(x + 1)(x + 3)"
+    },
+    "methods": [
+      {
+        "id": "split-34",
+        "tex": "2x^{2} + 3x + 4x + 6"
+      },
+      {
+        "id": "split-43",
+        "tex": "2x^{2} + 4x + 3x + 6"
+      }
+    ]
+  },
+  "zero": {
+    "courts": [
+      {
+        "a": 1,
+        "b": 5,
+        "c": 6,
+        "rhs": 0,
+        "role": "learn"
+      },
+      {
+        "a": 1,
+        "b": 5,
+        "c": 6,
+        "rhs": 2,
+        "role": "observability"
+      },
+      {
+        "a": 2,
+        "b": 8,
+        "c": 6,
+        "rhs": 0,
+        "role": "warmup"
+      },
+      {
+        "a": 2,
+        "b": 7,
+        "c": 6,
+        "rhs": 0,
+        "role": "finale"
+      }
+    ]
+  },
+  "help": {
+    "p:vale-twelve": "The tray shows a number as rows and columns. The gate asks for twelve as a product — any true product opens it. Type numbers; Enter commits.",
+    "p:vale-machine": "Feed the stone a number for x and both carvings compute in front of you. Read what the factors become. The door asks what you saw.",
+    "p:vale-pair": "Two carved rules part ways here. Walk the way you believe; the stones along it answer. The assay stones test any claim at three numbers.",
+    "p:vale-braid": "The ways part where the working parts. Carry your pair through the gate that re-adds the middles; take either lane; what the groups share opens the way.",
+    "p:vale-zero": "Twelve can be made many ways; zero cannot. The last doors only open for numbers that truly land the whole line on nothing."
+  }
+}

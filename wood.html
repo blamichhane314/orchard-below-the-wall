@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Ways — trajectory wood</title>
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="style.css">
+<script defer src="vendor/katex/katex.min.js"></script>
+<script>window.__WORLD = 'wood';</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="world"></canvas>
+  <div id="labels" aria-hidden="true"></div>
+  <div id="crosshair" aria-hidden="true"></div>
+
+  <header id="hud">
+    <span class="hud-title">The Ways</span>
+    <span class="hud-keys"><b>click</b> to look · <b>W A S D</b> move · <b>arrows</b> look · <b>E</b> act · <b>Tab</b> architect</span>
+    <select id="hud-warp" class="hud-btn hud-warp" title="testing only: jump to a station with its preconditions set"></select>
+    <button id="hud-trace" class="hud-btn" title="a faint trace of what you last did; turn it off or on">Trace</button>
+    <a class="hud-btn" href="still.html" title="everything you have carved stands in the still place; reading a stone restores it">Carvings</a>
+    <button id="hud-night" class="hud-btn">Night</button>
+    <button id="hud-arch" class="hud-btn">Architect</button>
+    <button id="hud-log" class="hud-btn">Log</button>
+  </header>
+
+  <div id="prompt"></div>
+
+  <aside id="panel">
+    <button id="panel-info" aria-label="about this" title="what this is and how to use it">ⓘ</button>
+    <button id="panel-close" aria-label="close">×</button>
+    <div id="panel-help"></div>
+    <div id="panel-body"></div>
+  </aside>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

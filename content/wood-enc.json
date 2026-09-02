@@ -1,0 +1,57 @@
+{
+  "instruments": [],
+  "way": {
+    "item": {
+      "a": 2,
+      "b": 7,
+      "c": 6,
+      "tex": "2x^{2} + 7x + 6"
+    },
+    "probe": {
+      "a": 1,
+      "b": 5,
+      "c": 6,
+      "tex": "x^{2} + 5x + 6"
+    },
+    "drills": [
+      {
+        "a": 1,
+        "b": 3,
+        "c": 2,
+        "tex": "x^{2} + 3x + 2"
+      },
+      {
+        "a": 1,
+        "b": 5,
+        "c": 6,
+        "tex": "x^{2} + 5x + 6"
+      }
+    ],
+    "inocTex": "1 \\cdot 6"
+  },
+  "training": {
+    "items": [
+      {
+        "a": 1,
+        "b": 5,
+        "c": 6,
+        "tex": "x^{2} + 5x + 6"
+      },
+      {
+        "a": 1,
+        "b": 7,
+        "c": 12,
+        "tex": "x^{2} + 7x + 12"
+      },
+      {
+        "a": 1,
+        "b": 8,
+        "c": 15,
+        "tex": "x^{2} + 8x + 15"
+      }
+    ]
+  },
+  "help": {
+    "p:wood-way": "Read the stone, then choose a way by walking into its mouth. Each way is its own wood; what your rule does there is the answer. Stones along a way take numbers; Enter commits. The way home lights itself when it is time."
+  }
+}
